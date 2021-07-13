@@ -1,4 +1,4 @@
-package models;
+package directory.models;
 
 import java.util.Objects;
 
@@ -8,9 +8,9 @@ public class Budget {
 	private int budget;
 	private long month;
 	private double amount;
-	private Models.Enums.Notification notification;
+	private Enums.Notification notification;
 
-	public Budget(int date, int budget, long month, double amount, Models.Enums.Notification notification) {
+	public Budget(int date, int budget, long month, double amount, Enums.Notification notification) {
 		Date = date;
 		this.budget = budget;
 		this.month = month;
@@ -50,11 +50,11 @@ public class Budget {
 		this.amount = amount;
 	}
 
-	public Models.Enums.Notification getNotification() {
+	public Enums.Notification getNotification() {
 		return notification;
 	}
 
-	public void setNotification(Models.Enums.Notification notification) {
+	public void setNotification(Enums.Notification notification) {
 		this.notification = notification;
 	}
 

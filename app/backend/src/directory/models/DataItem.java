@@ -1,13 +1,9 @@
-package models;
-
-import Models.Enums;
-
-import java.util.Objects;
+package directory.models;
 
 public class DataItem {
 
 	private String itemName;
-	private Models.Enums.Categories categories;
+	private Enums.Categories categories;
 	private double itemPrice;
 	private String dataItemId;
 

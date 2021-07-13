@@ -1,10 +1,9 @@
-package service;
+package directory.services;
 
-import exceptions.receipt.ReceiptAlreadyExistsException;
-import exceptions.receipt.ReceiptNotFoundException;
-import models.DataItem;
-import models.Receipt;
-import repositories.ReceiptRepo;
+import directory.exceptions.receipt.ReceiptAlreadyExistsException;
+import directory.exceptions.receipt.ReceiptNotFoundException;
+import directory.models.Receipt;
+import directory.repositories.ReceiptRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

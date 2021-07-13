@@ -1,4 +1,5 @@
-package models;
+package directory.models;
+
 
 import java.util.List;
 import java.util.Objects;
@@ -10,13 +11,13 @@ public class Receipt {
 	private String imageUrl;
 	private String businessName;
 	private int date;
-	private List<models.DataItem> dataItems;
+	private List<DataItem> dataItems;
 
 	public Receipt() {
 
 	}
 
-	public Receipt(double total, long receiptId, String imageUrl, String businessName, int date, List<models.DataItem> dataItems) {
+	public Receipt(double total, long receiptId, String imageUrl, String businessName, int date, List<DataItem> dataItems) {
 		this.total = total;
 		this.receiptId = receiptId;
 		this.imageUrl = imageUrl;
@@ -65,11 +66,11 @@ public class Receipt {
 		this.date = date;
 	}
 
-	public List<models.DataItem> getDataItems() {
+	public List<DataItem> getDataItems() {
 		return dataItems;
 	}
 
-	public void setDataItems(List<models.DataItem> dataItems) {
+	public void setDataItems(List<DataItem> dataItems) {
 		this.dataItems = dataItems;
 	}
 

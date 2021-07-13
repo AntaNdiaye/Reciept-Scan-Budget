@@ -1,4 +1,4 @@
-package directory.Models;
+package directory.models;
 
 public interface Enums {
 

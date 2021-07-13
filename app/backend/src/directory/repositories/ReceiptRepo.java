@@ -1,6 +1,6 @@
-package repositories;
+package directory.repositories;
 
-import models.Receipt;
+import directory.models.Receipt;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
