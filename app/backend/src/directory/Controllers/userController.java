@@ -1,4 +1,4 @@
-package Controllers;
+package directory.Controllers;
 
 public class userController {
 

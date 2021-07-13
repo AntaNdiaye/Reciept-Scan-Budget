@@ -1,9 +1,9 @@
-package exceptions;
+package directory.exceptions;
 
-import exceptions.receipt.ReceiptAlreadyExistsException;
-import exceptions.receipt.ReceiptNotFoundException;
-import exceptions.user.UserAlreadyExistsException;
-import exceptions.user.UserNotFoundException;
+import directory.exceptions.receipt.ReceiptAlreadyExistsException;
+import directory.exceptions.receipt.ReceiptNotFoundException;
+import directory.exceptions.user.UserAlreadyExistsException;
+import directory.exceptions.user.UserNotFoundException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

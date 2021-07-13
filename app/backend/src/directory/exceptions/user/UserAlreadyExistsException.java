@@ -1,4 +1,4 @@
-package exceptions.user;
+package directory.exceptions.user;
 
 public class UserAlreadyExistsException extends RuntimeException{
     public UserAlreadyExistsException(Long userId) {

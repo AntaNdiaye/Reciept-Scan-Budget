@@ -1,4 +1,4 @@
-package exceptions;
+package directory.exceptions;
 
 public class GlobalException extends RuntimeException{
     public GlobalException(String message) {

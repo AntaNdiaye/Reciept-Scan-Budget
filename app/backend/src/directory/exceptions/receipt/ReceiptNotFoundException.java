@@ -1,4 +1,4 @@
-package exceptions.receipt;
+package directory.exceptions.receipt;
 
 public class ReceiptNotFoundException extends RuntimeException {
     public ReceiptNotFoundException (Long receiptId) {
