@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/recieptScanBudget.iml" filepath="$PROJECT_DIR$/.idea/recieptScanBudget.iml" />
+      <module fileurl="file://$PROJECT_DIR$/recieptScanBudget.iml" filepath="$PROJECT_DIR$/recieptScanBudget.iml" />
     </modules>
   </component>
 </project>
