@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class userService {
+public class UserService {
 
 	public void createUser() {
 		// TODO - implement userService.createUser

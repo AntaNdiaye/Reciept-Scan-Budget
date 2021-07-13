@@ -11,9 +11,9 @@ public class User {
 
 	private String Name;
 	private long Age;
-	private @Id
+	@Id
 	@GeneratedValue
-	long userId;
+	private long userId;
 
 	/**
 	 * adds this to "pastbudgetLimitMap"

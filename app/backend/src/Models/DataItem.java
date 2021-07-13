@@ -5,12 +5,12 @@ import java.util.Objects;
 public class DataItem {
 
 	private String itemName;
-	private Categories category;
+	private Enums.Categories categories;
 	private double itemPrice;
 
-	public DataItem(String itemName, Categories category, double itemPrice) {
+	public DataItem(String itemName, Enums.Categories categories, double itemPrice) {
 		this.itemName = itemName;
-		this.category = category;
+		this.categories = categories;
 		this.itemPrice = itemPrice;
 	}
 
@@ -22,12 +22,12 @@ public class DataItem {
 		this.itemName = itemName;
 	}
 
-	public Categories getCategory() {
-		return category;
+	public Enums.Categories getCategory() {
+		return categories;
 	}
 
-	public void setCategory(Categories category) {
-		this.category = category;
+	public void setCategory(Enums.Categories category) {
+		this.categories = category;
 	}
 
 	public double getItemPrice() {
@@ -48,14 +48,14 @@ public class DataItem {
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(itemName, category, itemPrice);
+		return Objects.hash(itemName, categories, itemPrice);
 	}
 
 	@Override
 	public String toString() {
 		return "DataItem{" +
 				"itemName='" + itemName + '\'' +
-				", category=" + category +
+				", category=" + categories +
 				", itemPrice=" + itemPrice +
 				'}';
 	}
