@@ -1,10 +1,19 @@
 package Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table
 public class User {
 
 	private String Name;
 	private long Age;
-	private long userId;
+	private @Id
+	@GeneratedValue
+	long userId;
 
 	/**
 	 * adds this to "pastbudgetLimitMap"
@@ -29,6 +38,10 @@ public class User {
 		this.currentBudgetLimit = currentBudgetLimit;
 		this.pastBudgetLimitMap = pastBudgetLimitMap;
 		this.userReciepts = userReciepts;
+	}
+
+	public User() {
+
 	}
 
 	/**

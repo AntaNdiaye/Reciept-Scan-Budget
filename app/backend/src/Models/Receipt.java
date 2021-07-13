@@ -1,11 +1,19 @@
 package Models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table
 public class Receipt {
 
 	private double total;
-	private long recieptId;
+	private @Id
+	@GeneratedValue
+	long recieptId;
 	/**
 	 * URL of captured image
 	 */
@@ -26,6 +34,10 @@ public class Receipt {
 		this.date = date;
 		this.dataItemsList = dataItemsList;
 		this.userID = userID;
+	}
+
+	public Receipt() {
+
 	}
 
 	public double getTotal() {
