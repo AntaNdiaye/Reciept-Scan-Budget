@@ -1,0 +1,35 @@
+package Service;
+
+public class userService {
+
+	public void createUser() {
+		// TODO - implement userService.createUser
+		throw new UnsupportedOperationException();
+	}
+
+	public void getUserReciepts() {
+		// TODO - implement userService.getUserReciepts
+		throw new UnsupportedOperationException();
+	}
+
+	public void getUserPastBudgetLimits() {
+		// TODO - implement userService.getUserPastBudgetLimits
+		throw new UnsupportedOperationException();
+	}
+
+	public void getUserCurrentBudgetLimits() {
+		// TODO - implement userService.getUserCurrentBudgetLimits
+		throw new UnsupportedOperationException();
+	}
+
+	public void postCurrentBudgetLimits() {
+		// TODO - implement userService.postCurrentBudgetLimits
+		throw new UnsupportedOperationException();
+	}
+
+	public void changeCurrentBudgetLimits() {
+		// TODO - implement userService.changeCurrentBudgetLimits
+		throw new UnsupportedOperationException();
+	}
+
+}
