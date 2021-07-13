@@ -1,9 +1,9 @@
-package Repository;
+package repositories;
 
-import Models.Receipt;
+import models.Receipt;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface RecieptRepo extends JpaRepository<Receipt, Long> {
+public interface ReceiptRepo extends JpaRepository<Receipt, Long> {
 }

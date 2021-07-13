@@ -1,42 +1,28 @@
-package Models;
+package models;
 
-import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
-@Entity
-@Table
 public class Receipt {
 
 	private double total;
-	@Id
-	@GeneratedValue
-	private	long recieptId;
-	/**
-	 * URL of captured image
-	 */
+	private	long receiptId;
 	private String imageUrl;
 	private String businessName;
 	private int date;
-//	/**
-//	 * a list of individual items within a single reciept.
-//	 */
-//	@ElementCollection
-//	private List<DataItem> dataItemsList;
-//	private User userID;
-
-	public Receipt(double total, long recieptId, String imageUrl, String businessName) {
-		this.total = total;
-		this.recieptId = recieptId;
-		this.imageUrl = imageUrl;
-		this.businessName = businessName;
-		this.date = date;
-//		this.dataItemsList = dataItemsList;
-//		this.userID = userID;
-	}
+	private List<models.DataItem> dataItems;
 
 	public Receipt() {
 
+	}
+
+	public Receipt(double total, long receiptId, String imageUrl, String businessName, int date, List<models.DataItem> dataItems) {
+		this.total = total;
+		this.receiptId = receiptId;
+		this.imageUrl = imageUrl;
+		this.businessName = businessName;
+		this.date = date;
+		this.dataItems = dataItems;
 	}
 
 	public double getTotal() {
@@ -47,12 +33,12 @@ public class Receipt {
 		this.total = total;
 	}
 
-	public long getRecieptId() {
-		return recieptId;
+	public long getReceiptId() {
+		return receiptId;
 	}
 
-	public void setRecieptId(long recieptId) {
-		this.recieptId = recieptId;
+	public void setReceiptId(long receiptId) {
+		this.receiptId = receiptId;
 	}
 
 	public String getImageUrl() {
@@ -79,31 +65,12 @@ public class Receipt {
 		this.date = date;
 	}
 
-//	public DataItem getDataItemsList() {
-//		return dataItemsList;
-//	}
-//
-//	public void setDataItemsList(DataItem dataItemsList) {
-//		this.dataItemsList = dataItemsList;
-//	}
-//
-//	public User getUserID() {
-//		return userID;
-//	}
-//
-//	public void setUserID(User userID) {
-//		this.userID = userID;
-//	}
+	public List<models.DataItem> getDataItems() {
+		return dataItems;
+	}
 
-	@Override
-	public String toString() {
-		return "Receipt{" +
-				"total=" + total +
-				", recieptId=" + recieptId +
-				", imageUrl='" + imageUrl + '\'' +
-				", businessName='" + businessName + '\'' +
-				", date=" + date +
-				'}';
+	public void setDataItems(List<models.DataItem> dataItems) {
+		this.dataItems = dataItems;
 	}
 
 	@Override
@@ -111,11 +78,23 @@ public class Receipt {
 		if (this == o) return true;
 		if (o == null || getClass() != o.getClass()) return false;
 		Receipt receipt = (Receipt) o;
-		return Double.compare(receipt.total, total) == 0 && recieptId == receipt.recieptId && date == receipt.date && imageUrl.equals(receipt.imageUrl) && businessName.equals(receipt.businessName);
+		return Double.compare(receipt.total, total) == 0 && receiptId == receipt.receiptId && date == receipt.date && Objects.equals(imageUrl, receipt.imageUrl) && Objects.equals(businessName, receipt.businessName) && Objects.equals(dataItems, receipt.dataItems);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(total, recieptId, imageUrl, businessName, date);
+		return Objects.hash(total, receiptId, imageUrl, businessName, date, dataItems);
+	}
+
+	@Override
+	public String toString() {
+		return "Receipt{" +
+				"total=" + total +
+				", receiptId=" + receiptId +
+				", imageUrl='" + imageUrl + '\'' +
+				", businessName='" + businessName + '\'' +
+				", date=" + date +
+				", dataItems=" + dataItems +
+				'}';
 	}
 }

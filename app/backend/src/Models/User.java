@@ -1,4 +1,4 @@
-package Models;
+package models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +11,6 @@ public class User {
 
 	private String Name;
 	private long Age;
-	@Id
-	@GeneratedValue
 	private long userId;
 
 	/**

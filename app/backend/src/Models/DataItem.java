@@ -1,17 +1,18 @@
-package Models;
+package models;
+
+import Models.Enums;
 
 import java.util.Objects;
 
 public class DataItem {
 
 	private String itemName;
-	private Enums.Categories categories;
+	private Models.Enums.Categories categories;
 	private double itemPrice;
+	private String dataItemId;
 
-	public DataItem(String itemName, Enums.Categories categories, double itemPrice) {
-		this.itemName = itemName;
-		this.categories = categories;
-		this.itemPrice = itemPrice;
+	public DataItem() {
+
 	}
 
 	public String getItemName() {
@@ -22,12 +23,12 @@ public class DataItem {
 		this.itemName = itemName;
 	}
 
-	public Enums.Categories getCategory() {
+	public Enums.Categories getCategories() {
 		return categories;
 	}
 
-	public void setCategory(Enums.Categories category) {
-		this.categories = category;
+	public void setCategories(Enums.Categories categories) {
+		this.categories = categories;
 	}
 
 	public double getItemPrice() {
@@ -38,25 +39,11 @@ public class DataItem {
 		this.itemPrice = itemPrice;
 	}
 
-	@Override
-	public boolean equals(Object o) {
-		if (this == o) return true;
-		if (o == null || getClass() != o.getClass()) return false;
-		DataItem dataItem = (DataItem) o;
-		return Double.compare(dataItem.itemPrice, itemPrice) == 0 && itemName.equals(dataItem.itemName) && category == dataItem.category;
+	public String getDataItemId() {
+		return dataItemId;
 	}
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(itemName, categories, itemPrice);
-	}
-
-	@Override
-	public String toString() {
-		return "DataItem{" +
-				"itemName='" + itemName + '\'' +
-				", category=" + categories +
-				", itemPrice=" + itemPrice +
-				'}';
+	public void setDataItemId(String dataItemId) {
+		this.dataItemId = dataItemId;
 	}
 }
