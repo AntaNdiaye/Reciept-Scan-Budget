@@ -1,6 +1,6 @@
 package directory.Controllers;
 
-public class userController {
+public class UserController {
 
 	/**
 	 * Creates a new user instance for app
