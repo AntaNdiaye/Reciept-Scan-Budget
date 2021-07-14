@@ -1,14 +1,39 @@
 package directory.models;
 
+import javax.persistence.*;
+
+@Entity
 public class DataItem {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long dataItemId;
+
+	@ManyToOne
+	private Receipt receipt;
 
 	private String itemName;
 	private Enums.Categories categories;
 	private double itemPrice;
-	private String dataItemId;
 
 	public DataItem() {
 
+	}
+
+	public Long getDataItemId() {
+		return dataItemId;
+	}
+
+	public void setDataItemId(Long dataItemId) {
+		this.dataItemId = dataItemId;
+	}
+
+	public Receipt getReceipt() {
+		return receipt;
+	}
+
+	public void setReceipt(Receipt receipt) {
+		this.receipt = receipt;
 	}
 
 	public String getItemName() {
@@ -35,11 +60,4 @@ public class DataItem {
 		this.itemPrice = itemPrice;
 	}
 
-	public String getDataItemId() {
-		return dataItemId;
-	}
-
-	public void setDataItemId(String dataItemId) {
-		this.dataItemId = dataItemId;
-	}
 }
