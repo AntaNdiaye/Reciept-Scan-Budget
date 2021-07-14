@@ -9,7 +9,7 @@
         <module name="recieptScanBudget" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="16">
       <module name="recieptScanBudget" target="16" />
     </bytecodeTargetLevel>
   </component>
