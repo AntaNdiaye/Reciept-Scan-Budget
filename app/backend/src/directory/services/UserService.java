@@ -47,7 +47,8 @@ public class UserService {
 		return getUserCurrentBudgetLimits(userId);
 	}
 
-	public void changeCurrentBudgetLimits(User theUser,double newBudget) {
+	public void changeCurrentBudgetLimits(double newBudget) {
+		User theUser = new User();
 		if(!userRepo.existsById(theUser.getUserId())){
 			throw new UserNotFoundException(theUser.getUserId());
 		}

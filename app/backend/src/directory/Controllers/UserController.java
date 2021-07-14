@@ -29,32 +29,31 @@ public class UserController {
 	/**
 	 * Creates a new user instance for app
 	 */
-	@PutMapping("/User")
+	@PostMapping("/user")
 	@ResponseStatus(HttpStatus.CREATED)
 	public void createUser(@RequestBody User newUser) {
 		userService.createUser(newUser);
 	}
-	@GetMapping("/User/{useId}/Reciepts")
+	@GetMapping("/user/{useId}/Reciepts")
 	public List<Receipt> getUserReciepts(@PathVariable long userId) {
 		return userService.getUserReciepts(userId);
 	}
-	@GetMapping("/User/{userId}/PBudgets")
+	@GetMapping("/user/{userId}/PBudgets")
 	public HashMap<Long,Double> getUserPastBudgetLimits(@PathVariable long userId) {
 		return userService.getUserPastBudgetLimits(userId);
 	}
-	@GetMapping("/User/{userId}/CBudget")
-	public void getUserCurrentBudgetLimit(@PathVariable long userID) {
-
+	@GetMapping("/user/{userId}/CBudget")
+	public double getUserCurrentBudgetLimit(@PathVariable long userID) {
+		return getUserCurrentBudgetLimit(userID);
+	}
+	@PutMapping("/user/{userId}/newBudget")
+	public void changeCurrentBudgetLimit(@PathVariable double newBudget) {
+		 changeCurrentBudgetLimit(newBudget);
 	}
 
-	public void postCurrentBudgetLimit() {
-		// TODO - implement userController.postCurrentBudgetLimit
-		throw new UnsupportedOperationException();
-	}
-
-	public void changeCurrentBudgetLimit() {
-		// TODO - implement userController.changeCurrentBudgetLimit
-		throw new UnsupportedOperationException();
-	}
+//	public void postCurrentBudgetLimit() {
+//		// TODO - implement userController.postCurrentBudgetLimit
+//		throw new UnsupportedOperationException();
+//	}
 
 }
