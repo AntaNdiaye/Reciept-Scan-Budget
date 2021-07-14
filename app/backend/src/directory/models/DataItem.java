@@ -1,6 +1,6 @@
 package directory.models;
 
-public class DataItem implements Enums{
+public class DataItem {
 
 	private String itemName;
 	private Enums.Categories categories;
