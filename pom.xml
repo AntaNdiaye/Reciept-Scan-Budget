@@ -64,6 +64,20 @@
 			<version>1.0.1</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.google.firebase</groupId>
+			<artifactId>firebase-admin</artifactId>
+			<version>8.0.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.google.api.grpc/proto-google-cloud-vision-v1 -->
+		<dependency>
+			<groupId>com.google.api.grpc</groupId>
+			<artifactId>proto-google-cloud-vision-v1</artifactId>
+			<version>1.103.6</version>
+		</dependency>
+
+
+
 
 	</dependencies>
 
