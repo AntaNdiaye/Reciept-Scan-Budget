@@ -1,38 +1,65 @@
 package directory.services;
 
+import directory.exceptions.receipt.ReceiptAlreadyExistsException;
+import directory.exceptions.user.UserAlreadyExistsException;
+import directory.exceptions.user.UserNotFoundException;
+import directory.models.Receipt;
+import directory.models.User;
+import directory.repositories.UserRepo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
 
 @Service
 public class UserService {
+	@Autowired
+	private UserRepo userRepo;
 
-	public void createUser() {
-		// TODO - implement userService.createUser
-		throw new UnsupportedOperationException();
+	public UserService(){}
+
+	public User createUser(User newUser) throws UserAlreadyExistsException {
+		if (userRepo.existsById(newUser.getUserId())) {
+			throw new ReceiptAlreadyExistsException(newUser.getUserId());
+		}
+		return userRepo.save(newUser);
 	}
 
-	public void getUserReciepts() {
-		// TODO - implement userService.getUserReciepts
-		throw new UnsupportedOperationException();
+	public List<Receipt> getUserReciepts(long userId) throws UserNotFoundException {
+	if(!userRepo.existsById(userId)){
+		throw new UserNotFoundException(userId);
+	}
+	return getUserReciepts(userId);
 	}
 
-	public void getUserPastBudgetLimits() {
-		// TODO - implement userService.getUserPastBudgetLimits
-		throw new UnsupportedOperationException();
+	public HashMap<Long,Double> getUserPastBudgetLimits(long userId) throws UserNotFoundException {
+		if(!userRepo.existsById(userId)){
+			throw new UserNotFoundException(userId);
+		}
+		return getUserPastBudgetLimits(userId);
 	}
 
-	public void getUserCurrentBudgetLimits() {
-		// TODO - implement userService.getUserCurrentBudgetLimits
-		throw new UnsupportedOperationException();
+	public double getUserCurrentBudgetLimits(long userId) {
+		if(!userRepo.existsById(userId)){
+			throw new UserNotFoundException(userId);
+		}
+		return getUserCurrentBudgetLimits(userId);
 	}
 
-	public void postCurrentBudgetLimits() {
-		// TODO - implement userService.postCurrentBudgetLimits
-		throw new UnsupportedOperationException();
+	public void changeCurrentBudgetLimits(User theUser,double newBudget) {
+		if(!userRepo.existsById(theUser.getUserId())){
+			throw new UserNotFoundException(theUser.getUserId());
+		}
+		theUser.setCurrentBudgetLimit(newBudget);
+		theUser.setPastBudgetLimitMap(theUser.getPastBudgetLimitMap());
 	}
 
-	public void changeCurrentBudgetLimits() {
-		// TODO - implement userService.changeCurrentBudgetLimits
-		throw new UnsupportedOperationException();
-	}
+//	public void postBudgetLimits(long userId,	double newBudget) {
+//		if(!userRepo.existsById(userId)){
+//			throw new UserNotFoundException(userId);
+//		}
+//
+//	}
 
 }

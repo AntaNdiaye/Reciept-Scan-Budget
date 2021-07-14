@@ -1,11 +1,18 @@
 package directory.models;
 
 
+import java.util.HashMap;
+import java.util.List;
+
 public class User {
 
 	private String Name;
 	private long Age;
 	private long userId;
+	private List<Receipt> userReceipts;
+
+	private long month;
+
 
 	/**
 	 * adds this to "pastbudgetLimitMap"
@@ -17,19 +24,19 @@ public class User {
 	 * Key = month - Long
 	 * Value = amount - double
 	 */
-	private int pastBudgetLimitMap;
+	private HashMap<Long,Double> pastBudgetLimitMap;
 	/**
 	 * A list of all of reciepts for a single user object
 	 */
-	private Receipt userReciepts;
 
-	public User(String name, long age, long userId, double currentBudgetLimit, int pastBudgetLimitMap, Receipt userReciepts) {
+
+	public User(String name, long age, long userId, double currentBudgetLimit, HashMap<Long,Double> pastBudgetLimitMap, List<Receipt> userReciepts) {
 		Name = name;
 		Age = age;
 		this.userId = userId;
 		this.currentBudgetLimit = currentBudgetLimit;
 		this.pastBudgetLimitMap = pastBudgetLimitMap;
-		this.userReciepts = userReciepts;
+		this.userReceipts = userReciepts;
 	}
 
 	public User() {
@@ -76,20 +83,25 @@ public class User {
 		this.currentBudgetLimit = currentBudgetLimit;
 	}
 
-	public int getPastBudgetLimitMap() {
+	public HashMap<Long, Double> getPastBudgetLimitMap() {
 		return pastBudgetLimitMap;
 	}
 
-	public void setPastBudgetLimitMap(int pastBudgetLimitMap) {
+	public long getMonth() { return month; }
+
+	public void setMonth(long month) { this.month = month; }
+
+	public void setPastBudgetLimitMap(HashMap<Long,Double> pastBudgetLimitMap) {
 		this.pastBudgetLimitMap = pastBudgetLimitMap;
+		pastBudgetLimitMap.put(month,getCurrentBudgetLimit());
 	}
 
-	public Receipt getUserReciepts() {
-		return userReciepts;
+	public List<Receipt> getUserReciepts() {
+		return userReceipts;
 	}
 
-	public void setUserReciepts(Receipt userReciepts) {
-		this.userReciepts = userReciepts;
+	public void setUserReciepts(List<Receipt> userReciepts) {
+		this.userReceipts = userReciepts;
 	}
 
 	@Override
@@ -100,7 +112,7 @@ public class User {
 				", userId=" + userId +
 				", currentBudgetLimit=" + currentBudgetLimit +
 				", pastBudgetLimitMap=" + pastBudgetLimitMap +
-				", userReciepts=" + userReciepts +
+				", userReciepts=" + userReceipts +
 				'}';
 	}
 }
