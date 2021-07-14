@@ -75,9 +75,24 @@
 			<artifactId>proto-google-cloud-vision-v1</artifactId>
 			<version>1.103.6</version>
 		</dependency>
-
-
-
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-context -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-context</artifactId>
+			<version>3.0.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-gcp-starter -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-gcp-starter</artifactId>
+			<version>1.2.8.RELEASE</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-gcp-vision -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-gcp-vision</artifactId>
+			<version>1.2.8.RELEASE</version>
+		</dependency>
 
 	</dependencies>
 
