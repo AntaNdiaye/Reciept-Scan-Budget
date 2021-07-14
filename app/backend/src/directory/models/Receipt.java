@@ -1,9 +1,12 @@
 package directory.models;
 
 
+
+import javax.persistence.Entity;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Receipt {
 
 	private double total;

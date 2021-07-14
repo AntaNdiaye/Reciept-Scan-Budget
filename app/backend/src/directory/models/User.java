@@ -1,6 +1,8 @@
 package directory.models;
 
+import javax.persistence.Entity;
 
+@Entity
 public class User {
 
 	private String Name;
