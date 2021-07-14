@@ -46,7 +46,7 @@ public class UserController {
 	public double getUserCurrentBudgetLimit(@PathVariable long userID) {
 		return getUserCurrentBudgetLimit(userID);
 	}
-	@PutMapping("/user/{userId}/newBudget")
+	@PutMapping("/user/{newBudget}/newBudget")
 	public void changeCurrentBudgetLimit(@PathVariable double newBudget) {
 		 changeCurrentBudgetLimit(newBudget);
 	}
