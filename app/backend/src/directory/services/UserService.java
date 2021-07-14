@@ -19,32 +19,32 @@ public class UserService {
 
 	public UserService(){}
 
-	public User createUser(User newUser) throws UserAlreadyExistsException {
+	public void createUser(User newUser) throws UserAlreadyExistsException {
 		if (userRepo.existsById(newUser.getUserId())) {
 			throw new ReceiptAlreadyExistsException(newUser.getUserId());
 		}
-		return userRepo.save(newUser);
+		userRepo.save(newUser);
 	}
 
 	public List<Receipt> getUserReciepts(long userId) throws UserNotFoundException {
-	if(!userRepo.existsById(userId)){
-		throw new UserNotFoundException(userId);
+	if(userRepo.existsById(userId)){
+		return getUserReciepts(userId);
 	}
-	return getUserReciepts(userId);
+		throw new UserNotFoundException(userId);
 	}
 
 	public HashMap<Long,Double> getUserPastBudgetLimits(long userId) throws UserNotFoundException {
-		if(!userRepo.existsById(userId)){
-			throw new UserNotFoundException(userId);
+		if(userRepo.existsById(userId)){
+			return getUserPastBudgetLimits(userId);
 		}
-		return getUserPastBudgetLimits(userId);
+		throw new UserNotFoundException(userId);
 	}
 
 	public double getUserCurrentBudgetLimits(long userId) {
-		if(!userRepo.existsById(userId)){
-			throw new UserNotFoundException(userId);
+		if(userRepo.existsById(userId)){
+			return getUserCurrentBudgetLimits(userId);
 		}
-		return getUserCurrentBudgetLimits(userId);
+		throw new UserNotFoundException(userId);
 	}
 
 	public void changeCurrentBudgetLimits(double newBudget) {
