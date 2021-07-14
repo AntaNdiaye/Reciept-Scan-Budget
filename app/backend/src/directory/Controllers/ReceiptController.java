@@ -20,10 +20,9 @@ public class ReceiptController {
 		this.receiptService = receiptService;
 	}
 
-	@RequestMapping(value = "/", method = RequestMethod.POST)
-	@ResponseStatus(HttpStatus.CREATED)
+	@PutMapping("/user/{receiptId}/receipt")
 	@CrossOrigin
-	public Receipt createReceipt(@RequestBody Receipt receipt) {
+	public Receipt newReceipt(Receipt receipt) {
 		return this.receiptService.createReceipt(receipt);
 	}
 

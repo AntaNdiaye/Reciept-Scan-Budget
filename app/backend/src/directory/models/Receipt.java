@@ -1,17 +1,22 @@
 package directory.models;
 
-
+import javax.persistence.*;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class Receipt {
 
 	private double total;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private	long receiptId;
 	private String imageUrl;
 	private String businessName;
 	private int date;
+	@OneToMany(mappedBy = "receipt")
 	private List<DataItem> dataItems;
+	private User user;
 
 	public Receipt() {
 

@@ -1,10 +1,16 @@
 package directory.models;
 
+import javax.persistence.*;
+import java.util.List;
+import java.util.Objects;
 
+@Entity
 public class User {
 
-	private String Name;
-	private long Age;
+	private String name;
+	private long age;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long userId;
 
 	/**
@@ -21,15 +27,15 @@ public class User {
 	/**
 	 * A list of all of reciepts for a single user object
 	 */
-	private Receipt userReciepts;
+	@OneToMany(mappedBy = "user")
+	private List<Receipt> userReciepts;
 
-	public User(String name, long age, long userId, double currentBudgetLimit, int pastBudgetLimitMap, Receipt userReciepts) {
-		Name = name;
-		Age = age;
+	public User(String name, long age, long userId, double currentBudgetLimit, int pastBudgetLimitMap) {
+		this.name = name;
+		this.age = age;
 		this.userId = userId;
 		this.currentBudgetLimit = currentBudgetLimit;
 		this.pastBudgetLimitMap = pastBudgetLimitMap;
-		this.userReciepts = userReciepts;
 	}
 
 	public User() {
@@ -45,19 +51,19 @@ public class User {
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 
 	public long getAge() {
-		return Age;
+		return age;
 	}
 
 	public void setAge(long age) {
-		Age = age;
+		this.age = age;
 	}
 
 	public long getUserId() {
@@ -84,23 +90,24 @@ public class User {
 		this.pastBudgetLimitMap = pastBudgetLimitMap;
 	}
 
-	public Receipt getUserReciepts() {
+	public List<Receipt> getUserReciepts() {
 		return userReciepts;
 	}
 
-	public void setUserReciepts(Receipt userReciepts) {
+	public void setUserReciepts(List<Receipt> userReciepts) {
 		this.userReciepts = userReciepts;
 	}
 
 	@Override
-	public String toString() {
-		return "User{" +
-				"Name='" + Name + '\'' +
-				", Age=" + Age +
-				", userId=" + userId +
-				", currentBudgetLimit=" + currentBudgetLimit +
-				", pastBudgetLimitMap=" + pastBudgetLimitMap +
-				", userReciepts=" + userReciepts +
-				'}';
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		User user = (User) o;
+		return age == user.age && userId == user.userId && Double.compare(user.currentBudgetLimit, currentBudgetLimit) == 0 && pastBudgetLimitMap == user.pastBudgetLimitMap && Objects.equals(name, user.name) && Objects.equals(userReciepts, user.userReciepts);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(name, age, userId, currentBudgetLimit, pastBudgetLimitMap, userReciepts);
 	}
 }
