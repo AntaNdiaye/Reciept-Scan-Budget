@@ -7,16 +7,20 @@ import java.util.Objects;
 @Entity
 public class Receipt {
 
-	private double total;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private	long receiptId;
+
+	@OneToMany(mappedBy = "receipt")
+	private List<DataItem> dataItems;
+
+	@ManyToOne
+	private User user;
+
+	private double total;
 	private String imageUrl;
 	private String businessName;
 	private int date;
-	@OneToMany(mappedBy = "receipt")
-	private List<DataItem> dataItems;
-	private User user;
 
 	public Receipt() {
 

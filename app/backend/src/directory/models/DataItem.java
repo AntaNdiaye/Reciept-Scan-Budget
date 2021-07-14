@@ -7,24 +7,25 @@ public class DataItem {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long dataItemId;
+
+	@ManyToOne
+	private Receipt receipt;
+
 	private String itemName;
 	private Enums.Categories categories;
 	private double itemPrice;
-	private String dataItemId;
-	@ManyToOne
-	private Receipt receipt;
 
 	public DataItem() {
 
 	}
 
-	public Long getId() {
-		return id;
+	public Long getDataItemId() {
+		return dataItemId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setDataItemId(Long dataItemId) {
+		this.dataItemId = dataItemId;
 	}
 
 	public Receipt getReceipt() {
@@ -59,11 +60,4 @@ public class DataItem {
 		this.itemPrice = itemPrice;
 	}
 
-	public String getDataItemId() {
-		return dataItemId;
-	}
-
-	public void setDataItemId(String dataItemId) {
-		this.dataItemId = dataItemId;
-	}
 }

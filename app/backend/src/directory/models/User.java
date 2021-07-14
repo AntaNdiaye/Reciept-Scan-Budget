@@ -7,11 +7,12 @@ import java.util.Objects;
 @Entity
 public class User {
 
-	private String name;
-	private long age;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long userId;
+
+	private String name;
+	private long age;
 
 	/**
 	 * adds this to "pastbudgetLimitMap"
