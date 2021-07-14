@@ -6,8 +6,11 @@ import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.WriteResult;
 import com.google.firebase.cloud.FirestoreClient;
+import org.springframework.stereotype.Service;
+
 import java.util.concurrent.ExecutionException;
 
+@Service
 public class FireBaseService {
     //adding to the database
     public String saveReceipt(String url) throws ExecutionException, InterruptedException {
