@@ -17,16 +17,16 @@ public class Receipt {
 	@ManyToOne
 	private User user;
 
-	private double total;
+	private Double total;
 	private String imageUrl;
 	private String businessName;
-	private int date;
+	private Integer date;
 
 	public Receipt() {
 
 	}
 
-	public Receipt(double total, long receiptId, String imageUrl, String businessName, int date, List<DataItem> dataItems) {
+	public Receipt(Double total, Long receiptId, String imageUrl, String businessName, Integer date, List<DataItem> dataItems) {
 		this.total = total;
 		this.receiptId = receiptId;
 		this.imageUrl = imageUrl;
@@ -35,19 +35,19 @@ public class Receipt {
 		this.dataItems = dataItems;
 	}
 
-	public double getTotal() {
+	public Double getTotal() {
 		return total;
 	}
 
-	public void setTotal(double total) {
+	public void setTotal(Double total) {
 		this.total = total;
 	}
 
-	public long getReceiptId() {
+	public Long getReceiptId() {
 		return receiptId;
 	}
 
-	public void setReceiptId(long receiptId) {
+	public void setReceiptId(Long receiptId) {
 		this.receiptId = receiptId;
 	}
 
@@ -67,11 +67,11 @@ public class Receipt {
 		this.businessName = businessName;
 	}
 
-	public int getDate() {
+	public Integer getDate() {
 		return date;
 	}
 
-	public void setDate(int date) {
+	public void setDate(Integer date) {
 		this.date = date;
 	}
 

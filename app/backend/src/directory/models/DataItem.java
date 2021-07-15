@@ -14,7 +14,7 @@ public class DataItem {
 
 	private String itemName;
 	private Enums.Categories categories;
-	private double itemPrice;
+	private Double itemPrice;
 
 	public DataItem() {
 
@@ -56,7 +56,7 @@ public class DataItem {
 		return itemPrice;
 	}
 
-	public void setItemPrice(double itemPrice) {
+	public void setItemPrice(Double itemPrice) {
 		this.itemPrice = itemPrice;
 	}
 

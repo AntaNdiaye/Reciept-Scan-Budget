@@ -9,29 +9,29 @@ public class User {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long userId;
+	private Long userId;
 
 	private String name;
-	private long age;
+	private Long age;
 
 	/**
 	 * adds this to "pastbudgetLimitMap"
 	 */
-	private double currentBudgetLimit;
+	private Double currentBudgetLimit;
 	/**
 	 * A hash map cannot contain duplicate keys; each key can map to at most one value.
 	 * 
 	 * Key = month - Long
 	 * Value = amount - double
 	 */
-	private int pastBudgetLimitMap;
+	private Integer pastBudgetLimitMap;
 	/**
 	 * A list of all of reciepts for a single user object
 	 */
 	@OneToMany(mappedBy = "user")
 	private List<Receipt> userReciepts;
 
-	public User(String name, long age, long userId, double currentBudgetLimit, int pastBudgetLimitMap) {
+	public User(String name, Long age, Long userId, Double currentBudgetLimit, Integer pastBudgetLimitMap) {
 		this.name = name;
 		this.age = age;
 		this.userId = userId;
@@ -46,7 +46,7 @@ public class User {
 	/**
 	 * adds up the total of ALL reciepts per user
 	 */
-	public double getAllRecieptsTotal() {
+	public Double getAllRecieptsTotal() {
 		// TODO - implement User.getAllRecieptsTotal
 		throw new UnsupportedOperationException();
 	}
@@ -59,36 +59,28 @@ public class User {
 		this.name = name;
 	}
 
-	public long getAge() {
+	public Long getAge() {
 		return age;
 	}
 
-	public void setAge(long age) {
+	public void setAge(Long age) {
 		this.age = age;
 	}
 
-	public long getUserId() {
+	public Long getUserId() {
 		return userId;
 	}
 
-	public void setUserId(long userId) {
+	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
 
-	public double getCurrentBudgetLimit() {
+	public Double getCurrentBudgetLimit() {
 		return currentBudgetLimit;
 	}
 
-	public void setCurrentBudgetLimit(double currentBudgetLimit) {
+	public void setCurrentBudgetLimit(Double currentBudgetLimit) {
 		this.currentBudgetLimit = currentBudgetLimit;
-	}
-
-	public int getPastBudgetLimitMap() {
-		return pastBudgetLimitMap;
-	}
-
-	public void setPastBudgetLimitMap(int pastBudgetLimitMap) {
-		this.pastBudgetLimitMap = pastBudgetLimitMap;
 	}
 
 	public List<Receipt> getUserReciepts() {
