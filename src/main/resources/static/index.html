@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scan Project</title>
+</head>
+<body>
+
+<h1>Reciept.Scan.Budget</h1>
+
+<article>
+Easily identify and track monthly budget spenditures and be more aware of spending habits.
+</article>
+
+<div>
+  <h4>Classifies reciept image properties:</h4>
+  <form action="/properties">
+    Please paste an image URL -
+    <input type="text"
+           name="imageUrl"
+           value="{insert url}"/>
+
+    <input type="submit"/>
+  </form>
+</div>
+
+<div>
+  <h4>Grabs text items from reciept image:</h4>
+  <form action="/recieptItems">
+    Please paste an image URL -
+    <input type="text"
+           name="imageUrl"
+           value="{insert url}" />
+    <input type="submit" />
+  </form>
+</div>
+
+<div>
+  <h4>Categorizes text from above image text retrieval:</h4>
+  <form action="/categorize">
+    Please paste text items from previous screen -
+    <input type="text"
+           name="name"
+           value="{insert text}" />
+    <input type="submit" />
+  </form>
+</div>
+
+</body>
+</html>
