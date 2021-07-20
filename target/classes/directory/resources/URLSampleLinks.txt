@@ -1,0 +1,4 @@
+https://d7pdsiqo9rcig.cloudfront.net/wp-content/uploads/2019/11/Receipt-OCR-Taggun-demo.png
+
+OCR Text output from reciept image url above ^
+Optd by: Bag of Beans Cafe & Restaurant Inc. BAG OF BEANS CAFE & RESTAURANT INC 117 Aguinaldo Highway Crossing Mendez 117 Aguinaldo Highway Crossing Mendez West Tagaytay City Cavite 4120 TIN: 008-117-738-000 VAT O.R. #: 783944 Cashier: Eloisa 11/5/2019 Guest:3 1:24:50 PM 1 170.00 100.00 165.00 Coffee Choco Banana 1 HotGreen Tea 1 D White mocha 1 Blueberry Cheesecake [Slice] 175.00 SubTotal 610.00 PreTax 544.64 Serv Charge.(10%) 12% VAT 54.46 65.36 Amount Due 664.46

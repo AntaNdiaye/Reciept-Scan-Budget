@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Scan Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+
+<style>
+    .extracted_text {
+        width: 30em;
+        min-height: 20em;
+        font-family: "sans-serif", Monaco, monospace;
+        background-color: #ccffcc;
+    }
+</style>
+
+<body>
+<h1>Reciept Analysis</h1>
+
+<div th:if="${characteristics}">
+    <h4>Reciept Image Properties - </h4>
+    <table border="1">
+        <tr>
+            <th>Property</th>
+            <th>&#37 Accuracy</th>
+        </tr>
+        <tr th:each="entry : ${characteristics}">
+            <td>[[${entry.getDescription()}]]</td>
+            <td>[[${entry.getScore()}]]</td>
+        </tr>
+    </table>
+
+    <p>
+        <img style="max-width: 300px" th:src="${imageUrl}"/>
+    </p>
+</div>
+
+<div th:if="${input}">
+    <h3>Reciept image "text" data items - </h3>
+    <div class="extracted_text">
+        [[${input}]]
+    </div>
+
+    <p>
+        <img style="max-width: 300px" th:src="${imageUrl}"/>
+    </p>
+</div>
+
+
+<div th:if="${name}">
+    <h3>Reciept image Category Analysis - </h3>
+    <div class="extracted_text">
+        [[${name}]]
+    </div>
+
+</div>
+
+
+</body>
+</html>
