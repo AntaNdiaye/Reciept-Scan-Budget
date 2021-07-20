@@ -47,14 +47,14 @@ public class UserService {
 		throw new UserNotFoundException(userId);
 	}
 
-	public void changeCurrentBudgetLimits(double newBudget) {
-		User theUser = new User();
-		if(!userRepo.existsById(theUser.getUserId())){
-			throw new UserNotFoundException(theUser.getUserId());
-		}
-		theUser.setCurrentBudgetLimit(newBudget);
-		theUser.setPastBudgetLimitMap(theUser.getPastBudgetLimitMap());
-	}
+//	public void changeCurrentBudgetLimits(double newBudget) {
+//		User theUser = new User();
+//		if(!userRepo.existsById(theUser.getUserId())){
+//			throw new UserNotFoundException(theUser.getUserId());
+//		}
+//		theUser.setCurrentBudgetLimit(newBudget);
+//		theUser.setPastBudgetLimitMap(theUser.getPastBudgetLimitMap());
+//	}
 
 //	public void postBudgetLimits(long userId,	double newBudget) {
 //		if(!userRepo.existsById(userId)){
