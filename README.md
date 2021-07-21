@@ -51,8 +51,6 @@ image 7 -
 
 ---
 
-## Show your support
-Give a ⭐️ if this project helped you!
 
 
 
