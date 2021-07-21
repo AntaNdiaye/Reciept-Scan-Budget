@@ -43,7 +43,11 @@ image 4 -
 image 5 - 
 <img src="https://i.imgur.com/Vd9XhAl.png" alt="drawing" width="400"/>
 
+image 6 - 
+<img src="https://i.imgur.com/WQ7ZM28.png" alt="drawing" width="400"/>
 
+image 7 - 
+<img src="https://i.imgur.com/GQi4Dya.png" alt="drawing" width="400"/>
 
 ---
 
